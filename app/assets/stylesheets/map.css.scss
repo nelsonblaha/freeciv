@@ -2,24 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+span.lat{
+	clear:both;
+	float:left;
+	display:block;
+	position:relative;
+}
 
-// failed div rotation attempt
-	// div.tile {
-	// 	width: 40px;
-	// 	height: 40px;
-	// 	-webkit-transform: rotate(45deg);
-	// 	-moz-transform: rotate(45deg);
-	// 	-o-transform: rotate(45deg);
-	// 	background: blue;
-	// 	border:1px solid black;
-	// 	margin-top:15px;
-	// 	margin-right:15px;
-	// }
+div.tile {
+	width:40px;
+	height:40px;
+	background: blue;
+	border: 1px solid black;
+	float:left;
+}
 
-	// span.lng {
-	// 	float:left;
-	// }
 
-	// span.odd {
-	// 	margin-top:35px;
-	// }
+div#map{
+	clear:both;
+	float:left;
+	display:inline-block;
+	position:relative;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	margin-left:auto;
+	margin-right:auto;
+}
+
+div.plains{
+	background:green;
+}

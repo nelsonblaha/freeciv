@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 1
+  lat: 1
+  lng: 1
+  civ_id: 1
+  city_id: 1
+
+two:
+  type: 1
+  lat: 1
+  lng: 1
+  civ_id: 1
+  city_id: 1

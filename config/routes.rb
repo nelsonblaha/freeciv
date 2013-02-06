@@ -1,4 +1,10 @@
 Freeciv::Application.routes.draw do
+  resources :terrains
+
+
+  resources :maps
+
+
   get "map/index"
 
   # The priority is based upon order of creation:

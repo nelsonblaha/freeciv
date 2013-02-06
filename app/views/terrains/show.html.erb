@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Biome:</b>
+  <%= @terrain.biome_string %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @terrain.lat %>
+</p>
+
+<p>
+  <b>Lng:</b>
+  <%= @terrain.lng %>
+</p>
+
+<p>
+  <b>Civ:</b>
+  <%= @terrain.civ_id %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @terrain.city_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_terrain_path(@terrain) %> |
+<%= link_to 'Back', terrains_path %>

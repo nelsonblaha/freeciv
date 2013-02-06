@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+
+<div id="map">
+	<% lat = 0 %>
+	<% @map.height.times do %>
+		<span class="lat" data-lat=<%= lat %>>
+			<% lng = 0 %>
+			<% @map.width.times do %>
+				<% if terrain = Terrain.where(lat:lat,lng:lng).first %>
+					<div class="tile <%= terrain.biome_string %>" data-lat=<%= lat %> data-lng=<%= lng %>></div>
+				<% else %>
+					<div class="tile" data-lat=<%= lat %> data-lng=<%= lng %>></div>
+				<% end %>
+			<% lng += 1 %>
+			<% end %>
+		<% lat += 1 %>
+		</span>
+	<% end %>
+</div>
+
+<%= link_to 'Edit', edit_map_path(@map) %> |
+<%= link_to 'Back', maps_path %>
