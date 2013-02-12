@@ -2,12 +2,12 @@
 
 
 <div id="map">
-	<% terrain = @map.terrains %>
+	<% terrains = @map.terrains %>
 	<% tile_number = 0 %>
 	<% @map.height.times do %>
 		<span class="lat">
 			<% @map.width.times do %>
-				<% @terrain = Terrain.find(terrain[tile_number]) %>
+				<% @terrain = terrains[tile_number] %>
 				<div id="tile<%= @terrain.id %>" class="tile <%= @terrain.biome_string %>" data-id='<%= @terrain.id %>' data-biome='<%= @terrain.biome_string %>'></div>
 				<% tile_number += 1 %>
 			<% end %>
