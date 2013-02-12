@@ -31,6 +31,38 @@ div#map{
 
 }
 
-div.plains{
-	background:green;
-}
+// terrain types
+	div.glacier{
+		background:#DDDDDD;
+	}
+	div.desert{
+		background:#E0DC74;
+	}
+	div.forest{
+		background:#0E4405;
+	}
+	div.grassland{
+		background:#159F00;
+	}
+	div.hills{
+		background:#0E6600;
+	}
+	div.jungle{
+		background:#5AFF41;
+	}
+	div.mountains{
+		background:#474747;
+	}
+	div.ocean{
+		background:blue;
+	}
+	div.plains{
+		background:#64C456;
+	}
+	div.swamp{
+		background:#365B30;
+	}
+	div.tundra{
+		background:#9AD791;
+	}
+
