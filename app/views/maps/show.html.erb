@@ -2,7 +2,7 @@
 
 
 <div id="map">
-	<% terrains = @map.terrains %>
+	<% terrains = @map.terrains.sort_by {|terrain| terrain.id}%>
 	<% tile_number = 0 %>
 	<% @map.height.times do %>
 		<span class="lat">
