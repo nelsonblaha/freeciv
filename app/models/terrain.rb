@@ -3,10 +3,30 @@ class Terrain < ActiveRecord::Base
 
   def biome_string
   	case self.biome
-	  	when 0
-	  		"ocean"
-	  	when 1
-	  		"plains"
-  	end
+    	  when 0
+    	   "glacier"
+        when 1
+          "desert"
+        when 2
+          "forest"
+        when 3
+          "grassland"
+        when 4
+          "hills"
+        when 5
+          "jungle"
+        when 6
+          "mountains"
+        when 7
+          "ocean"
+        when 8
+          "plains"
+        when 9
+          "swamp"
+        when 10
+          "tundra"
+        else
+          "ocean"
+    	end
   end
 end
