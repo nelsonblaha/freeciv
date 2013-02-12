@@ -2,22 +2,17 @@
 
 
 <div id="map">
-	<% lat = 0 %>
+	<% terrain = @map.terrains %>
+	<% tile_number = 0 %>
 	<% @map.height.times do %>
-		<span class="lat" data-lat=<%= lat %>>
-			<% lng = 0 %>
+		<span class="lat">
 			<% @map.width.times do %>
-				<% if terrain = Terrain.where(lat:lat,lng:lng).first %>
-					<div class="tile <%= terrain.biome_string %>" data-lat=<%= lat %> data-lng=<%= lng %>></div>
-				<% else %>
-					<div class="tile" data-lat=<%= lat %> data-lng=<%= lng %>></div>
-				<% end %>
-			<% lng += 1 %>
+				<% @terrain = Terrain.find(terrain[tile_number]) %>
+				<div id="tile<%= @terrain.id %>" class="tile <%= @terrain.biome_string %>" data-id='<%= @terrain.id %>' data-biome='<%= @terrain.biome_string %>'></div>
+				<% tile_number += 1 %>
 			<% end %>
-		<% lat += 1 %>
 		</span>
 	<% end %>
 </div>
 
-<%= link_to 'Edit', edit_map_path(@map) %> |
-<%= link_to 'Back', maps_path %>
+<p id="biomeGuide"></p>

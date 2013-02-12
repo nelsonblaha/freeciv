@@ -1,6 +1,6 @@
 Freeciv::Application.routes.draw do
   resources :terrains
-
+  match '/increment_terrain' => "terrains#increment_terrain"
 
   resources :maps
 

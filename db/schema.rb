@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206053148) do
+ActiveRecord::Schema.define(:version => 20130212044023) do
 
   create_table "maps", :force => true do |t|
     t.integer  "width"
@@ -21,13 +21,14 @@ ActiveRecord::Schema.define(:version => 20130206053148) do
   end
 
   create_table "terrains", :force => true do |t|
-    t.integer  "biome"
+    t.integer  "biome",      :default => 7
     t.integer  "lat"
     t.integer  "lng"
     t.integer  "civ_id"
     t.integer  "city_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "map_id"
   end
 
 end
