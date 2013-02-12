@@ -13,3 +13,34 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function(){
+  $('div.tile').bind({
+      click: incrementTile
+      // click: alertData
+    });
+});
+
+function alertData(div){
+  alert($(this).data('id'));
+}
+
+function incrementTile(activeDiv){
+  var biome = $(this).data('biome');
+  var id = $(this).data('id');
+  $.getJSON(
+      "/increment_terrain.json",
+      { id:$(this).data('id') },
+      function(result){
+        $('div#tile'+id).removeClass(biome);
+        $('div#tile'+id).addClass(getBiomeString(result));
+        $('div#tile'+id).data('biome',getBiomeString(result));
+        $('p#biomeGuide').text(getBiomeString(result));
+      }
+    );
+}
+
+function getBiomeString(n){
+  var biomes = new Array("glacier","desert","forest","grassland","hills","jungle","mountains","ocean","plains","swamp","tundra")
+  return biomes[n]
+}
