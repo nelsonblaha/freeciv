@@ -1,3 +1,65 @@
 // Place all the styles related to the Maps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+span.lat{
+  clear:both;
+  float:left;
+  display:block;
+  position:relative;
+}
+
+div.tile {
+  width:40px;
+  height:40px;
+  background: blue;
+  float:left;
+}
+
+
+div#map{
+  clear:both;
+  float:left;
+  display:inline-block;
+  position:relative;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  margin-left:100px;
+  margin-top:100px;
+
+}
+
+// terrain types
+  div.glacier{
+    background:#DDDDDD;
+  }
+  div.desert{
+    background:#E0DC74;
+  }
+  div.forest{
+    background:#0E4405;
+  }
+  div.grassland{
+    background:#159F00;
+  }
+  div.hills{
+    background:#0E6600;
+  }
+  div.jungle{
+    background:#5AFF41;
+  }
+  div.mountains{
+    background:#474747;
+  }
+  div.ocean{
+    background:blue;
+  }
+  div.plains{
+    background:#64C456;
+  }
+  div.swamp{
+    background:#365B30;
+  }
+  div.tundra{
+    background:#9AD791;
+  }
