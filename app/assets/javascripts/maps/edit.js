@@ -1,14 +1,4 @@
-$(document).ready(function(){
-  $('div.tile').bind({
-      click: incrementTile
-    });
-});
-
-function alertData(div){
-  alert($(this).data('id'));
-}
-
-function incrementTile(activeDiv){
+function incrementTerrain(activeDiv){
   var biome = $(this).data('biome');
   var id = $(this).data('id');
   $.getJSON(

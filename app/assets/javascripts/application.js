@@ -18,3 +18,13 @@ function getBiomeString(n){
   var biomes = new Array("glacier","desert","forest","grassland","hills","jungle","mountains","ocean","plains","swamp","tundra")
   return biomes[n]
 }
+
+$(document).ready(function(){
+  $('div.tile').bind({
+      click: selectTile
+    });
+});
+
+function selectTile(div){
+  $(this).toggleClass('selected');
+}

@@ -15,6 +15,11 @@ div.tile {
   float:left;
 }
 
+div.selected{
+  border:dotted black 3px;
+  width:34px;
+  height:34px;
+}
 
 div#map{
   clear:both;
