@@ -1,6 +1,9 @@
 // Place all the styles related to the Maps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+}
+
 span.lat{
   clear:both;
   float:left;
@@ -15,10 +18,15 @@ div.tile {
   float:left;
 }
 
-div.selected{
+div.tile.selected{
   border:dotted black 3px;
   width:34px;
   height:34px;
+}
+
+div.tile.big{
+  width:50px;
+  height:50px;
 }
 
 div#map{
@@ -29,9 +37,7 @@ div#map{
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
-  margin-left:100px;
-  margin-top:100px;
-
+  margin:100px 10% 0 100px;
 }
 
 // terrain types

@@ -1,5 +1,7 @@
 $(document).ready(function(){
-  $('div#menu input#editMapToggle').bind('click',function(){
-    $('.mapEdit').toggle();
-  });
+
+  // edit mode toggle
+    $('div#menu input#editMapToggle').bind('click',function(){
+      $('.mapEdit').toggle();
+    });
 });

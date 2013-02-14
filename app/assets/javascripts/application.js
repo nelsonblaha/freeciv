@@ -14,16 +14,20 @@
 //= require jquery_ujs
 //= require_tree .
 
-function getBiomeString(n){
-  var biomes = new Array("glacier","desert","forest","grassland","hills","jungle","mountains","ocean","plains","swamp","tundra")
-  return biomes[n]
-}
+var biomes = new Array("glacier","desert","forest","grassland","hills","jungle","mountains","ocean","plains","swamp","tundra");
 
-$(document).ready(function(){
-  $('div.tile').bind({
-      click: selectTile
-    });
-});
+// todo kill
+  function getBiomeString(n){
+    var biomes = new Array("glacier","desert","forest","grassland","hills","jungle","mountains","ocean","plains","swamp","tundra")
+    return biomes[n]
+  }
+
+// map tile selection
+  $(document).ready(function(){
+    $('div#map span div.tile').bind({
+        click: selectTile
+      });
+  });
 
 function selectTile(div){
   $(this).toggleClass('selected');

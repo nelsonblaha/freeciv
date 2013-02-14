@@ -83,19 +83,16 @@ class TerrainsController < ApplicationController
         end
       end
 
-  def increment_terrain
+  def change_biome
+    if params[:id] && params[:biome]
       @terrain = Terrain.find(params[:id])
-      last_edited = Terrain.find(params[:last_edited]) if params[:last_edited]
-
-      #TODO set equal to last edited
-
-      #increment the biome but send 10 back around to 0
-      @terrain.biome = (@terrain.biome + 1) % 11
+      @terrain.biome = params[:biome]
 
       if @terrain.update_attributes(params[:terrain])
         render json: @terrain.biome
       else
         render json: @terrain.errors, status: :unprocessable_entity
       end
+    end
   end 
 end

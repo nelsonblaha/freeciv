@@ -1,14 +1,26 @@
-function incrementTerrain(activeDiv){
-  var biome = $(this).data('biome');
-  var id = $(this).data('id');
-  $.getJSON(
-      "/increment_terrain.json",
-      { id:$(this).data('id') },
+function changeTerrain(biome){
+  $.each($('div.tile.selected'),function(x,div){
+    $.post(
+      '/change_terrain_biome/',
+      {id:$(div).data('id'),biome:biomes.indexOf(biome)},
       function(result){
-        $('div#tile'+id).removeClass(biome);
-        $('div#tile'+id).addClass(getBiomeString(result));
-        $('div#tile'+id).data('biome',getBiomeString(result));
-        $('p#biomeGuide').text(getBiomeString(result));
+        $(div).removeClass($(div).data('biome'));
+        $(div).addClass(biomes[result]);
+        $(div).data('biome',biomes[result]);
+        $('p#selectedTerrainName').text(biomes[result]);
+        $('div#terrainGuide div.tile').removeClass('big');
+        $('div#terrainGuide div.tile.'+biomes[result]).addClass('big');
       }
     );
+  });
 }
+
+$(document).ready(function(){
+  // fill in terrain guide
+    $.each(biomes,function(x,biome){
+      $('div#terrainGuide').append("<div class='tile "+biome+"'></div>");
+      $('div#terrainGuide div.tile:last-child').bind({
+        click: function(){changeTerrain(biome)}
+      });
+    });
+});
