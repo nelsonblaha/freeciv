@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= render 'layouts/menu' %>
+
 <div id="map">
 	<% terrains = @map.terrains.sort_by {|terrain| terrain.id}%>
 	<% tile_number = 0 %>
