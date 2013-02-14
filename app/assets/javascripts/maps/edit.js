@@ -1,8 +1,6 @@
-
 $(document).ready(function(){
   $('div.tile').bind({
       click: incrementTile
-      // click: alertData
     });
 });
 
